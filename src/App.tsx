@@ -1,3 +1,13 @@
-export default function App() {
-	return <div>App</div>;
-}
+import Header from "./components/Header";
+import Main from "./components/Main";
+
+const App: React.FC = () => {
+	return (
+		<>
+			<Header />
+			<Main />
+		</>
+	);
+};
+
+export default App;
