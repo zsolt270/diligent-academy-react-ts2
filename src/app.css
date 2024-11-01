@@ -1,2 +1,27 @@
-#root {
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap");
+
+* {
+	box-sizing: border-box;
+}
+body {
+	color: rgb(223, 216, 253);
+	margin: 0;
+	background-image: linear-gradient(
+		120deg,
+		rgb(110, 93, 198),
+		rgb(43, 39, 63) 70%
+	);
+	background-repeat: no-repeat;
+}
+
+header {
+	background-image: linear-gradient(120deg, rgb(53, 44, 99), rgb(43, 39, 63));
+	padding: 2em;
+	text-align: center;
+}
+
+header h1 {
+	font-family: "Rubik Wet Paint", system-ui;
+	font-size: 3.5em;
+	margin: 0;
 }
