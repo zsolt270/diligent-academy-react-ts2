@@ -1,10 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap");
 
+:root {
+	--textColor: rgb(223, 216, 253);
+}
+
 * {
 	box-sizing: border-box;
 }
 body {
-	color: rgb(223, 216, 253);
+	color: var(--textColor);
+	font-size: 1.1em;
 	margin: 0;
 	background-image: linear-gradient(
 		120deg,
@@ -24,4 +29,76 @@ header h1 {
 	font-family: "Rubik Wet Paint", system-ui;
 	font-size: 3.5em;
 	margin: 0;
+}
+
+main {
+	padding: 5em 0em;
+	display: flex;
+	justify-content: center;
+}
+
+#todoContainer {
+	width: 50em;
+	background: transparent;
+	border-radius: 1em;
+	padding: 0em 1em;
+	text-align: center;
+}
+#todoContainer input {
+	/* min-width: 30em; */
+	/* margin-right: 2em; */
+	min-width: 100%;
+	padding: 1em 1.5em;
+	margin-bottom: 1.5em;
+	background-color: rgba(53, 44, 99, 0.5);
+	border: 0.5px solid black;
+	border-radius: 0.5em;
+	font-size: 1.1em;
+}
+#todoContainer input::placeholder,
+#todoContainer input {
+	color: var(--textColor);
+}
+
+#todoContainer input:focus {
+	outline: none;
+}
+
+#addBtn {
+	padding: 1em 3.5em;
+	margin-bottom: 2em;
+	border: none;
+	border-radius: 0.5em;
+	background-image: linear-gradient(
+		to bottom right,
+		rgb(243, 240, 255),
+		rgb(184, 172, 246)
+	);
+	/* background-image: linear-gradient(
+		to bottom right,
+		rgb(130, 112, 219),
+		rgb(94, 77, 178)
+	); */
+	font-size: 0.85em;
+	font-weight: 600;
+}
+
+.deleteBtn {
+}
+
+#addBtn:hover,
+.deleteBtn:hover {
+	cursor: pointer;
+}
+
+.todoRows {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1.5em 0em;
+	border-bottom: 1px solid black;
+}
+
+.todoRows:last-child {
+	border-bottom: none;
 }
