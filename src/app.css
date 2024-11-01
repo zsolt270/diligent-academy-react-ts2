@@ -8,6 +8,8 @@
 	box-sizing: border-box;
 }
 body {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	min-height: 55em;
 	color: var(--textColor);
 	font-size: 1.1em;
 	margin: 0;
@@ -37,6 +39,10 @@ main {
 	justify-content: center;
 }
 
+.flex {
+	display: flex;
+	justify-content: space-between;
+}
 #todoContainer {
 	width: 50em;
 	background: transparent;
@@ -45,8 +51,6 @@ main {
 	text-align: center;
 }
 #todoContainer input {
-	/* min-width: 30em; */
-	/* margin-right: 2em; */
 	min-width: 100%;
 	padding: 1em 1.5em;
 	margin-bottom: 1.5em;
@@ -74,16 +78,16 @@ main {
 		rgb(243, 240, 255),
 		rgb(184, 172, 246)
 	);
-	/* background-image: linear-gradient(
-		to bottom right,
-		rgb(130, 112, 219),
-		rgb(94, 77, 178)
-	); */
 	font-size: 0.85em;
 	font-weight: 600;
 }
 
 .deleteBtn {
+	padding-top: 0.25em;
+	background: transparent;
+	border: none;
+	font-size: 1.4em;
+	color: var(--textColor);
 }
 
 #addBtn:hover,
@@ -91,14 +95,50 @@ main {
 	cursor: pointer;
 }
 
-.todoRows {
-	display: flex;
-	justify-content: space-between;
+.completed,
+.notCompleted {
+	min-height: 1em;
+	min-width: 1em;
+	margin-right: 0.5em;
+	border: 1px solid var(--textColor);
+	border-radius: 50%;
+}
+
+.completed {
+	background-image: linear-gradient(
+		to bottom right,
+		rgb(243, 240, 255),
+		rgb(110, 93, 198)
+	);
+}
+
+.align-items-center {
 	align-items: center;
+}
+
+.todoRows {
 	padding: 1.5em 0em;
 	border-bottom: 1px solid black;
 }
 
 .todoRows:last-child {
 	border-bottom: none;
+}
+
+@media only screen and (max-width: 500px) {
+	body {
+		font-size: 1em;
+	}
+}
+
+@media only screen and (max-width: 450px) {
+	body {
+		font-size: 0.85em;
+	}
+}
+
+@media only screen and (max-width: 375px) {
+	body {
+		font-size: 0.8em;
+	}
 }

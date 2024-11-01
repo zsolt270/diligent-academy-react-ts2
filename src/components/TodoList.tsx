@@ -1,4 +1,5 @@
 import { TodoType } from "./Main";
+import { BsFillTrash3Fill } from "react-icons/bs";
 
 type Props = {
 	todos: TodoType[];
@@ -12,15 +13,17 @@ const TodoList: React.FC<Props> = ({ todos, doDelete }) => {
 				return (
 					<div
 						key={todo.text}
-						className='todoRows'
+						className='todoRows flex align-items-center'
 					>
-						<span>{todo.isDone ? "Done" : "Not Done"}</span>
-						<span>{todo.text}</span>
+						<div className='flex align-items-center'>
+							<div className={todo.isDone ? "completed" : "notCompleted"}></div>
+							{todo.isDone ? <del>{todo.text}</del> : <span>{todo.text}</span>}
+						</div>
 						<button
 							className='deleteBtn'
 							onClick={() => doDelete(todo.text)}
 						>
-							Delete
+							<BsFillTrash3Fill />
 						</button>
 					</div>
 				);
