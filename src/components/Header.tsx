@@ -1,9 +1,9 @@
-const Header: React.FC =() =>{
-  return (
-    <header>
-      <h1>Todo App</h1>
-    </header>
-  )
-}
+type HeaderProps = {
+  children: React.ReactNode;
+};
+
+const Header: React.FC<HeaderProps> = ({ children }) => {
+  return <header>{children}</header>;
+};
 
 export default Header;

@@ -2,13 +2,15 @@ import "./app.css";
 import Header from "./components/Header";
 import Main from "./components/Main";
 
-const App: React.FC =()=>{
+const App: React.FC = () => {
   return (
-   <>
-   <Header/>
-   <Main/>
-   </>
-  )
-}
+    <>
+      <Header>
+        <h1>Todo App</h1>
+      </Header>
+      <Main />
+    </>
+  );
+};
 
 export default App;
