@@ -7,19 +7,17 @@ const TodoList: React.FC<TodoListProps> = ({ todos, doDelete }) => {
       {todos.map((todo) => {
         return (
           <div key={todo.text} className="todoRows flex align-items-center">
-            <div className="flex align-items-center">
-              {todo.isDone ? (
-                <>
-                  <div className="completed"></div>
-                  <del>{todo.text}</del>
-                </>
-              ) : (
-                <>
-                  <div className="notCompleted"></div>
-                  <span>{todo.text}</span>
-                </>
-              )}
-            </div>
+            {todo.isDone ? (
+              <>
+                <div className="completed"></div>
+                <del>{todo.text}</del>
+              </>
+            ) : (
+              <>
+                <div className="notCompleted"></div>
+                <span>{todo.text}</span>
+              </>
+            )}
             <button className="deleteBtn" onClick={() => doDelete(todo.text)}>
               <BsFillTrash3Fill />
             </button>

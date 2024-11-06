@@ -1,4 +1,4 @@
-import { TodoType } from "../components/Main";
+import { TodoType } from "./types";
 
 export const dummyTodos: TodoType[] = [
   { text: "Complete JavaScript project", isDone: false },
