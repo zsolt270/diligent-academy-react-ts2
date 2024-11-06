@@ -1,24 +1,33 @@
-import { TodoType } from "./Main";
-
-type TodoListProps = {
-  todos: TodoType[];
-  doDelete: (text: string) => void;
-};
+import { TodoListProps } from "../lib/types";
+import { BsFillTrash3Fill } from "react-icons/bs";
 
 const TodoList: React.FC<TodoListProps> = ({ todos, doDelete }) => {
   return (
     <>
       {todos.map((todo) => {
         return (
-          <div key={todo.text}>
-            <span>{todo.text}</span>
-            <span>{todo.isDone ? " - Done" : " - Not Done"}</span>
-            <button onClick={()=>doDelete(todo.text)}>Delete</button>
+          <div key={todo.text} className="todoRows flex align-items-center">
+            <div className="flex align-items-center">
+              {todo.isDone ? (
+                <>
+                  <div className="completed"></div>
+                  <del>{todo.text}</del>
+                </>
+              ) : (
+                <>
+                  <div className="notCompleted"></div>
+                  <span>{todo.text}</span>
+                </>
+              )}
+            </div>
+            <button className="deleteBtn" onClick={() => doDelete(todo.text)}>
+              <BsFillTrash3Fill />
+            </button>
           </div>
         );
       })}
     </>
-  );  
+  );
 };
 
-export default TodoList;  
+export default TodoList;
