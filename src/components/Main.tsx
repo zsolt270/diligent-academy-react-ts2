@@ -29,7 +29,6 @@ export type TodoType = {
 const Main: React.FC = () => {
 	const [todos, setTodos] = useState<TodoType[]>(dummyTodos);
 	const [todoText, setTodoText] = useState<string>("");
-	const [addBtnShowed, setAddBtnShowed] = useState<boolean>(false);
 
 	function handleNewTodo() {
 		const newTodo = { text: todoText, isDone: false };
@@ -48,16 +47,11 @@ const Main: React.FC = () => {
 				<input
 					onChange={(e) => {
 						setTodoText(e.target.value);
-						if (e.target.value) {
-							setAddBtnShowed(true);
-						} else {
-							setAddBtnShowed(false);
-						}
 					}}
 					value={todoText}
 					placeholder='Add new todos...'
 				/>
-				{addBtnShowed && (
+				{todoText && (
 					<button
 						id='addBtn'
 						onClick={handleNewTodo}
