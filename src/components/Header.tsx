@@ -1,7 +1,7 @@
-const Header: React.FC = () => {
+const Header: React.FC<{children: React.ReactNode}> = ({children}) => {
 	return (
 		<header>
-			<h1>Todo App</h1>
+			{children}
 		</header>
 	);
 };
