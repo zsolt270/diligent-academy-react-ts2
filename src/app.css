@@ -83,7 +83,7 @@ main {
 }
 
 .deleteBtn {
-	margin-left: auto;
+  margin-left: auto;
   padding-top: 0.25em;
   background: transparent;
   border: none;
@@ -118,10 +118,10 @@ main {
 }
 
 .todoRows {
-	display: flex;
-	justify-content: start;
-	padding: 1.5em 0em;
-	border-bottom: 1px solid black;
+  display: flex;
+  justify-content: start;
+  padding: 1.5em 0em;
+  border-bottom: 1px solid black;
 }
 
 .todoRows:last-child {
